@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  h1.text-center Mashape Todo App
+  hr
+  div.container.ng-cloak
+    tabset(justified='true')
+      tab(heading='Tasks')
+        div#tasks
+          table.table.table-hover
+            thead
+              tr
+                td Done
+                td Item
+                td Tags
+                td Priority
+                td 
+              tr.create-task
+                td Create:
+                td
+                  input.form-control(type='text', placeholder='Create new task', ng-model='newTask.title')
+                td
+                  input.form-control(type='text', placeholder='workout,running', ng-model='newTask.tags')
+                td
+                  select.form-control(ng-model='newTask.priority')
+                    option(value='High') High
+                    option(value='Medium') Medium
+                    option(value='Low') Low
+                td
+                  div
+                    button.btn.btn-success.btn-create(ng-click='createTask()') Create
+              tr.filter-tasks
+                td Filters:
+                td
+                  input.form-control(type='text', ng-model='filters.title')
+                td
+                  input.form-control(type='text', ng-model='filters.tags')
+                td
+                  select.form-control(ng-model='filters.priority')
+                    option(value='')
+                    option(value='High') High
+                    option(value='Medium') Medium
+                    option(value='Low') Low
+
+            tbody
+              tr(ng-repeat='(key, task) in tasks | titles:filters.title | tags:filters.tags | priority:filters.priority', ng-class='{ success: task.completed }')
+                td 
+                  input(type='checkbox', id='checkbox{{$index}}', ng-change='sendText(task)', ng-model="task.completed")
+                  label(for='checkbox{{$index}}')
+                    span
+                td {{ task.title }}
+                td
+                  span(ng-repeat='tag in task.tags') [{{ tag }}] 
+                td {{ task.priority }}
+                td 
+                  a(ng-click='deleteTask(key)', title='Delete Task') X
+      tab(heading='Analytics')
+        div#analytics
+          div.bar-chart(bar-chart, tasks='tasks')
+      tab(heading='Settings')
+        div#settings
+          div.alert.alert-danger(ng-if='saveError') {{ saveError }}
+          form.form.form-horizontal
+            div.form-group
+              label.col-md-2(for='phone') Phone Number:
+              input#phone.form-control.col-md-4(type='tel', placeholder='XXX-XXX-XXXX', ng-model='user.phone')
+            button.btn.btn-success(ng-click='saveUserSettings()') {{ saveBtnText() }}
+            a.btn.btn-info(href='/auth/logout') Logout

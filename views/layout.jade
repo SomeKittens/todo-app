@@ -1,0 +1,22 @@
+doctype html
+html(ng-app='TodoApp')
+  head
+    title Mashape Todo
+    link(rel='stylesheet', href='/css/lib/bootswatch-superhero.css')
+    link(rel='stylesheet', href='/css/home.css')
+    link(rel="icon" type="image/png" href="/favicon.ico")
+    meta(charset="utf-8")
+    script.
+      var fburl = '#{fburl}'
+        , phone = '#{phone}';
+  body(ng-controller='TasksCtrl')
+    block content
+    script(type='text/javascript', src='/js/lib/angular.js')
+    script(type='text/javascript', src='/js/lib/angular-bootstrap.js')
+    script(type='text/javascript', src='//cdn.firebase.com/js/client/1.0.6/firebase.js')
+    script(type='text/javascript', src='//cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js')
+    script(type='text/javascript', src='/js/lib/d3.min.js', charset='utf-8')
+    script(type='text/javascript', src='/js/lib/kc.js')
+    script(type='text/javascript', src='/js/ng.js')
+    script(type='text/javascript', src='/js/filters.js')
+    script(type='text/javascript', src='/js/barChart.js')

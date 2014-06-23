@@ -1,0 +1,63 @@
+// Fix for Angular UI
+.nav, .pagination, .carousel, .panel-title, a 
+  cursor pointer
+  
+.ng-cloak
+  display none
+
+#tasks
+  thead td
+    text-align center
+    font-weight bold
+  tbody
+    tr
+      background-color #4e5d6c
+      
+  td
+    font-size 20px
+
+    div, a
+      text-align center
+    a
+      text-decoration none
+      color #d2322d
+    /* checkbox icons CC-NC-BA Gentleface.com */
+    input[type=checkbox]
+      display none
+    input[type=checkbox] + label span
+      display inline-block
+      background url('/img/unchecked.png')
+      width 28px
+      height 28px
+      cursor pointer
+      margin auto
+    input[type=checkbox]:checked + label span
+      background url('/img/checked.png')
+    
+#analytics
+  margin-top 20px
+  .bar-chart
+    svg
+      width 960px
+      display block
+      margin auto
+      text
+        fill white
+      g
+        .axis text
+          font 10px sans-serif
+        .axis path,
+        .axis line
+          fill none
+          stroke #fff
+          shape-rendering crispEdges
+
+#settings
+  form
+    margin-top 20px
+    label
+      font-size 20px
+    #phone
+      width 40%
+    button + a
+      margin-left 5px

@@ -1,0 +1,75 @@
+.nav,
+.pagination,
+.carousel,
+.panel-title,
+a {
+  cursor: pointer;
+}
+.ng-cloak {
+  display: none;
+}
+#tasks thead td {
+  text-align: center;
+  font-weight: bold;
+}
+#tasks tbody tr {
+  background-color: #4e5d6c;
+}
+#tasks td {
+  font-size: 20px;
+/* checkbox icons CC-NC-BA Gentleface.com */
+}
+#tasks td div,
+#tasks td a {
+  text-align: center;
+}
+#tasks td a {
+  text-decoration: none;
+  color: #d2322d;
+}
+#tasks td input[type=checkbox] {
+  display: none;
+}
+#tasks td input[type=checkbox] + label span {
+  display: inline-block;
+  background: url("/img/unchecked.png");
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  margin: auto;
+}
+#tasks td input[type=checkbox]:checked + label span {
+  background: url("/img/checked.png");
+}
+#analytics {
+  margin-top: 20px;
+}
+#analytics .bar-chart svg {
+  width: 960px;
+  display: block;
+  margin: auto;
+}
+#analytics .bar-chart svg text {
+  fill: #fff;
+}
+#analytics .bar-chart svg g .axis text {
+  font: 10px sans-serif;
+}
+#analytics .bar-chart svg g .axis path,
+#analytics .bar-chart svg g .axis line {
+  fill: none;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+#settings form {
+  margin-top: 20px;
+}
+#settings form label {
+  font-size: 20px;
+}
+#settings form #phone {
+  width: 40%;
+}
+#settings form button + a {
+  margin-left: 5px;
+}

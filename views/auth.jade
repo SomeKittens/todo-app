@@ -1,0 +1,13 @@
+doctype html
+html(ng-app='TodoApp')
+  head
+    title Mashape Todo
+    link(rel='stylesheet', href='/css/lib/bootswatch-superhero.css')
+    link(rel='stylesheet', href='/css/auth.css')
+  body
+    h1.text-center Mashape Todo App
+    hr
+    div.login.col-md-4.col-md-offset-4
+      p.lead
+        | Mashape's todo app is the #1 way to keep track of the many tasks you need to do!
+      a.btn.btn-primary(href='/auth/facebook') Log in via Facebook
